@@ -1,0 +1,95 @@
+body{
+    font-family: $secondary-font-family;
+}
+a{
+    text-decoration: none;
+}
+header{
+    display: flex;
+    position: sticky;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    padding: 50px 45px;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    .logo{
+        img{
+            @include breakPoint(1115px){
+                width: 120px;
+            };
+        }
+
+    }
+    nav{
+        width: 600px;
+        ul{
+            width: 100% ;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0;
+            @include breakPoint(1115px){
+                display: none
+            };
+            li{
+                a{
+                    font-weight: $font-weight;
+                    color: $anchor-color;
+                    &:hover{
+                        color: $secondary-color;
+                    }
+                    i{
+                        font-size: 9px;
+                    }
+                }
+                
+            }
+        }
+    }
+    .buttons{
+        margin-left:  auto;
+    }
+    .burger{
+        display: none;
+        font-size: 25px;
+        color: $primary-color;
+        @include breakPoint(1115px){
+            display: block;
+
+
+        }
+        i{
+        }
+    }
+}
+main{
+    .getpanther{
+        height: 100vh;
+        background-color:hsla(245,26%,28%,1);
+        background-image:
+        radial-gradient(at 100% 0%, hsla(247,19%,17%,1) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, hsla(246,20%,33%,1) 0px, transparent 50%);
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-evenly;
+        .getpanther-desc{
+            width: 40%;
+            h1{
+                color: white;
+            }
+            p{
+                color: white;
+            }
+
+        }
+        .getpanther-img{
+            img{
+                height: 500px;
+            }
+        }
+    }
+}

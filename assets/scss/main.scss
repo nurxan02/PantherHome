@@ -1,5 +1,11 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+//Global
+@import "./spacing";
+@import "./variables";
+@import "./mixins";
+@import "./typography";
+//Components
+@import "./components/buttons";
+//Pages
+@import "./pages/home";
+
+

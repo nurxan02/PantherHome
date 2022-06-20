@@ -5,13 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Panther Comunity</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/style.css">
+
 </head>
 
 <body>
     <div class="callbox">
-        
+
     </div>
     <header>
         <div class="logo">
@@ -19,17 +27,20 @@
         </div>
         <nav>
             <ul>
-                <li class="list-group-item"><a href="#">How it works</a></li>
+                <li class="list-group-item"><a href="#">How it works <i class="fa-solid fa-chevron-down"></i></a></li>
                 <li class="list-group-item"><a href="#">Explore platform</a></li>
                 <li class="list-group-item"><a href="#">Pricing</a></li>
-                <li class="list-group-item"><a href="#">Resources</a></li>
-                <li class="list-group-item"><a href="#">Company</a></li>
+                <li class="list-group-item"><a href="#">Resources <i class="fa-solid fa-chevron-down"></i></a></li>
+                <li class="list-group-item"><a href="#">Company <i class="fa-solid fa-chevron-down"></i></a></li>
             </ul>
         </nav>
         <div class="buttons">
-            <a href="#" class="login">Log in</a>
-            <a href="#" class="getstarted">Get started</a>
-            <a href="#" class="bookdemo">Book a demo</a>
+            <a href="#" class="button button-borderless login">Log in</a>
+            <a href="#" class="button button-bold button-dark getstarted">Get started</a>
+            <a href="#" class="button button-outline bookdemo">Book a demo</a>
+        </div>
+        <div class="burger">
+            <i class="fa-solid fa-bars"></i>
         </div>
     </header>
     <main>
@@ -49,6 +60,7 @@
         </section>
         <div class="customer-absolute">
             <div class="customer-review">
+                <img src="./assets/img/quote up.svg" alt="">
                 <p>
                     We’ve been able to hire incredible people we otherwise wouldn’t have been able to if not for
                     Panther.
@@ -56,6 +68,7 @@
                     <br>
                     Total peace-of-mind.
                 </p>
+                <img src="./assets/img/quote down.svg" alt="">
             </div>
 
             <div class="seperator-vertical"></div>
@@ -107,22 +120,28 @@
                 Why companies love Panther.
             </h2>
             <div class="lovepanther-review-pad">
-                <p class="love-active">
-                    We’ve been able to hire incredible people we otherwise wouldn’t have been able to if not for
-                    Panther.
-                    Total peace-of-mind.
-                </p>
-                <p class="love-disabled">
-                    Talent is undeniably spread globally. The best companies are using Panther to access the talent pool
-                    of the entire world.
-                </p>
-                <div class="love-user-info-active">
-                    <img src="./assets/img/customer-pp mini.png" alt="">
-                    <span> — Craig Hunter, Founder at Dwelling</span>
+                <div class="active-review review-up">
+                    <p class="love-active">
+                        We’ve been able to hire incredible people we otherwise wouldn’t have been able to if not for
+                        Panther.
+                        Total peace-of-mind.
+                    </p>
+                    <div class="love-user-info-active">
+                        <img src="./assets/img/customer-pp mini.png" alt="">
+                        <span> — Craig Hunter, Founder at Dwelling</span>
+                    </div>
                 </div>
-                <div class="love-user-info-disabled">
-                    <img src="./assets/img/customer-pp mini woman.png" alt="">
-                    <span> — Calanthia Mai, Director of Strategy at Fast</span>
+
+                <div class="disabled-review d-none review-up">
+                    <p class="love-disabled ">
+                        Talent is undeniably spread globally. The best companies are using Panther to access the talent
+                        pool
+                        of the entire world.
+                    </p>
+                    <div class="love-user-info-disabled">
+                        <img src="./assets/img/customer-pp mini woman.png" alt="">
+                        <span> — Calanthia Mai, Director of Strategy at Fast</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -177,7 +196,8 @@
                 <p>
                     We spend our days working with top-performing remote teams.
                     <br>
-                    Every two weeks, we share everything we’ve learned about remote work in a short newsletter. It’ll help
+                    Every two weeks, we share everything we’ve learned about remote work in a short newsletter. It’ll
+                    help
                     you work and hire better. Sign up below––it takes less than 10 seconds.
                 </p>
                 <label for="email">Work email <span>*</span></label>
@@ -216,5 +236,9 @@
             </ul>
         </section>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>

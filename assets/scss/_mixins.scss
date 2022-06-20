@@ -1,0 +1,33 @@
+  @mixin breakPoint($breakPointValue: 600px) {
+      @media only screen and (max-width: $breakPointValue) {
+          @content;
+      }
+  }
+
+  @mixin centerWith($with: flex) {
+      @if $with==flex {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+
+      @else {
+          position: relative;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+      }
+  }
+
+  @mixin background($imageURL: "",
+      $repeat: no-repeat,
+      $position: center,
+      $size: cover,
+      $color: black) {
+      background-color: $color;
+      background-size: $size;
+      background-position: $position;
+      background-repeat: $repeat;
+      background-image: url($imageURL);
+      @content;
+  }
