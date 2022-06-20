@@ -80,6 +80,10 @@ main{
             width: 40%;
             h1{
                 color: white;
+                font-size: 76px;
+                span{
+                    color: $text-special;
+                }
             }
             p{
                 color: white;

@@ -110,7 +110,10 @@ main .getpanther {
   main .getpanther .getpanther-desc {
     width: 40%; }
     main .getpanther .getpanther-desc h1 {
-      color: white; }
+      color: white;
+      font-size: 76px; }
+      main .getpanther .getpanther-desc h1 span {
+        color: #dff16d; }
     main .getpanther .getpanther-desc p {
       color: white; }
   main .getpanther .getpanther-img img {
