@@ -4,6 +4,12 @@
     transition: .3s;
 }
 
+.button-2{
+    @extend %button-properties-2;
+    color: $primary-color;
+    transition: .3s;
+}
+
 %button-properties {
     padding: 16px 24px;
     font-size: 17px; 
@@ -26,6 +32,18 @@
     };
     @include breakPoint(1115px){
         display: none
+    };
+
+
+}
+
+%button-properties-2{
+    padding: 16px 24px;
+    font-size: 17px; 
+    border-radius: $border-radius-base;
+    @include breakPoint(1280px){
+        padding: 14px 20px;
+        font-size: 16px; 
     };
 
 

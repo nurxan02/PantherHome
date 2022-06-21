@@ -1,10 +1,12 @@
-body{
+body {
     font-family: $secondary-font-family;
 }
-a{
+
+a {
     text-decoration: none;
 }
-header{
+
+header {
     display: flex;
     position: sticky;
     left: 0;
@@ -16,84 +18,187 @@ header{
 
     display: flex;
     align-items: center;
-    .logo{
-        img{
-            @include breakPoint(1115px){
+
+    .logo {
+        img {
+            @include breakPoint(1115px) {
                 width: 120px;
-            };
+            }
+
+            ;
         }
 
     }
-    nav{
+
+    nav {
         width: 600px;
-        ul{
-            width: 100% ;
+
+        ul {
+            width: 100%;
             display: flex;
             justify-content: space-between;
             margin-bottom: 0;
-            @include breakPoint(1115px){
+
+            @include breakPoint(1115px) {
                 display: none
-            };
-            li{
-                a{
+            }
+
+            ;
+
+            li {
+                a {
                     font-weight: $font-weight;
                     color: $anchor-color;
-                    &:hover{
+
+                    &:hover {
                         color: $secondary-color;
                     }
-                    i{
+
+                    i {
                         font-size: 9px;
                     }
                 }
-                
+
             }
         }
     }
-    .buttons{
-        margin-left:  auto;
+
+    .buttons {
+        margin-left: auto;
     }
-    .burger{
+
+    .burger {
         display: none;
         font-size: 25px;
         color: $primary-color;
-        @include breakPoint(1115px){
+
+        @include breakPoint(1115px) {
             display: block;
 
 
         }
-        i{
-        }
+
+        i {}
     }
 }
-main{
-    .getpanther{
-        height: 100vh;
-        background-color:hsla(245,26%,28%,1);
+
+main {
+    .getpanther {
+        height: 130vh;
+        background-color: hsla(245, 26%, 28%, 1);
         background-image:
-        radial-gradient(at 100% 0%, hsla(247,19%,17%,1) 0px, transparent 50%),
-        radial-gradient(at 0% 100%, hsla(246,20%,33%,1) 0px, transparent 50%);
+            radial-gradient(at 100% 0%, hsla(247, 19%, 17%, 1) 0px, transparent 50%),
+            radial-gradient(at 0% 100%, hsla(246, 20%, 33%, 1) 0px, transparent 50%);
+        padding: 0px 45px;
         display: flex;
-        align-items: center;
+        align-items: stretch;
         width: 100%;
         justify-content: space-evenly;
-        .getpanther-desc{
-            width: 40%;
-            h1{
+        padding-top: 170px;
+
+        @include breakPoint(1115px) {
+            padding-top: 0px;
+            justify-content: start;
+
+
+        }
+
+        .getpanther-desc {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+
+            @include breakPoint(1115px) {
+                width: 100%;
+                align-items: center;
+                align-content: flex-start;
+
+
+            }
+
+            h1 {
                 color: white;
                 font-size: 76px;
-                span{
+                font-family: 'Value Sans Pro', sans-serif;
+
+                @include breakPoint(1115px) {
+                    font-size: 40px;
+                    margin-top: 50px;
+
+                }
+
+                span {
                     color: $text-special;
                 }
             }
-            p{
-                color: white;
+
+            .img-responsive {
+                display: none;
+
+                @include breakPoint(1115px) {
+                    display: block;
+                    width: 70%;
+
+                }
             }
 
+            p {
+                color: white;
+                font-size: 20px;
+            }
+
+            .buttons-getpanther {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 330px;
+
+                .schedule {
+                    background-color: $secondary-color;
+                    color: white;
+                }
+
+                .signup-now {
+                    color: white;
+                    font-weight: 500;
+                    font-size: 18px;
+                }
+            }
+
+
+
         }
-        .getpanther-img{
-            img{
-                height: 500px;
+
+        .getpanther-img {
+            img {
+                height: 450px;
+
+            }
+
+            @include breakPoint(1115px) {
+                display: none;
+
             }
         }
+    }
+    .customer-absolute{
+        display: flex;
+        justify-content: space-evenly;
+        background-color: rgb(244, 243, 246);
+        position: absolute;
+        z-index: 1;
+        width: 65%;
+        padding: 60px;
+        border-radius: $border-radius-base*6;
+
+        .seperator-vertical{
+            background-color: black;
+            width: 5px;
+            height: 60%;
+            transform: rotate(90deg);
+        }
+
+
     }
 }

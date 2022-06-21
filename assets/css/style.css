@@ -7,6 +7,10 @@
   color: #27224a;
   transition: .3s; }
 
+.button-2 {
+  color: #27224a;
+  transition: .3s; }
+
 .button, .button-bold {
   padding: 16px 24px;
   font-size: 17px;
@@ -30,6 +34,15 @@
   @media only screen and (max-width: 1115px) {
     .button, .button-bold {
       display: none; } }
+
+.button-2 {
+  padding: 16px 24px;
+  font-size: 17px;
+  border-radius: 2px; }
+  @media only screen and (max-width: 1280px) {
+    .button-2 {
+      padding: 14px 20px;
+      font-size: 16px; } }
 
 .button-bold {
   font-weight: 500;
@@ -100,21 +113,77 @@ header {
         display: block; } }
 
 main .getpanther {
-  height: 100vh;
+  height: 130vh;
   background-color: #38355a;
   background-image: radial-gradient(at 100% 0%, #252334 0px, transparent 50%), radial-gradient(at 0% 100%, #474365 0px, transparent 50%);
+  padding: 0px 45px;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   width: 100%;
-  justify-content: space-evenly; }
+  justify-content: space-evenly;
+  padding-top: 170px; }
+  @media only screen and (max-width: 1115px) {
+    main .getpanther {
+      padding-top: 0px;
+      justify-content: start; } }
   main .getpanther .getpanther-desc {
-    width: 40%; }
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-content: center; }
+    @media only screen and (max-width: 1115px) {
+      main .getpanther .getpanther-desc {
+        width: 100%;
+        align-items: center;
+        align-content: flex-start; } }
     main .getpanther .getpanther-desc h1 {
       color: white;
-      font-size: 76px; }
+      font-size: 76px;
+      font-family: 'Value Sans Pro', sans-serif; }
+      @media only screen and (max-width: 1115px) {
+        main .getpanther .getpanther-desc h1 {
+          font-size: 40px;
+          margin-top: 50px; } }
       main .getpanther .getpanther-desc h1 span {
         color: #dff16d; }
+    main .getpanther .getpanther-desc .img-responsive {
+      display: none; }
+      @media only screen and (max-width: 1115px) {
+        main .getpanther .getpanther-desc .img-responsive {
+          display: block;
+          width: 70%; } }
     main .getpanther .getpanther-desc p {
-      color: white; }
+      color: white;
+      font-size: 20px; }
+    main .getpanther .getpanther-desc .buttons-getpanther {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 330px; }
+      main .getpanther .getpanther-desc .buttons-getpanther .schedule {
+        background-color: #8b6ee6;
+        color: white; }
+      main .getpanther .getpanther-desc .buttons-getpanther .signup-now {
+        color: white;
+        font-weight: 500;
+        font-size: 18px; }
   main .getpanther .getpanther-img img {
-    height: 500px; }
+    height: 450px; }
+  @media only screen and (max-width: 1115px) {
+    main .getpanther .getpanther-img {
+      display: none; } }
+
+main .customer-absolute {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #f4f3f6;
+  position: absolute;
+  z-index: 1;
+  width: 65%;
+  padding: 60px;
+  border-radius: 12px; }
+  main .customer-absolute .seperator-vertical {
+    background-color: black;
+    width: 5px;
+    height: 60%;
+    transform: rotate(90deg); }
