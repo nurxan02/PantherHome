@@ -7,28 +7,42 @@ a {
 }
 
 header {
+    .logo{
+        img{
+            transition: .3s transform;
+            &:hover{
+                transform: scale(1.05);
+            }
+        }
+    }
     display: flex;
     position: sticky;
+    z-index: 2;
     left: 0;
     top: 0;
     right: 0;
     bottom: auto;
-    padding: 50px 45px;
+    padding: 40px 230px;
     background-color: white;
 
     display: flex;
     align-items: center;
 
-    .logo {
-        img {
-            @include breakPoint(1115px) {
-                width: 120px;
-            }
-
-            ;
-        }
+    @include breakPoint(1604px) {
+        padding: 0px 45px;
 
     }
+
+    @include breakPoint(1344px) {
+        opacity: 90%;
+        padding: 0px 20px;
+
+    }
+    @include breakPoint(1115px) {
+        
+        height: 100px;
+    }
+
 
     nav {
         width: 600px;
@@ -43,13 +57,18 @@ header {
                 display: none
             }
 
-            ;
+            @include breakPoint(1604px) {
+                flex-wrap: wrap;
+            }
+
+
+
 
             li {
                 a {
                     font-weight: $font-weight;
                     color: $anchor-color;
-
+                    transition: .3s color;
                     &:hover {
                         color: $secondary-color;
                     }
@@ -71,25 +90,26 @@ header {
         display: none;
         font-size: 25px;
         color: $primary-color;
-
+        transition: .2s color; 
         @include breakPoint(1115px) {
             display: block;
-
-
+            padding: 0;
         }
 
-        i {}
+        &:active{
+            color: #7858da;
+        }
     }
 }
 
 main {
     .getpanther {
-        height: 130vh;
+        height: 1100px;
         background-color: hsla(245, 26%, 28%, 1);
         background-image:
             radial-gradient(at 100% 0%, hsla(247, 19%, 17%, 1) 0px, transparent 50%),
             radial-gradient(at 0% 100%, hsla(246, 20%, 33%, 1) 0px, transparent 50%);
-        padding: 0px 45px;
+        padding: 0px 100px;
         display: flex;
         align-items: stretch;
         width: 100%;
@@ -104,7 +124,7 @@ main {
         }
 
         .getpanther-desc {
-            width: 45%;
+            width: 35%;
             display: flex;
             flex-direction: column;
             align-content: center;
@@ -125,6 +145,14 @@ main {
                 @include breakPoint(1115px) {
                     font-size: 40px;
                     margin-top: 50px;
+
+                }
+
+                @include breakPoint(1434px) {
+
+                    font-size: 55px;
+                    margin-top: 20px;
+                    padding: 0;
 
                 }
 
@@ -155,14 +183,26 @@ main {
                 width: 330px;
 
                 .schedule {
-                    background-color: $secondary-color;
+                    background-color: #7858da;
                     color: white;
+                    transition: .3s background-color;
+
+                    &:hover {
+                        background-color: #8b6ee6;
+                    }
+
+                    font-size: 15px;
                 }
 
                 .signup-now {
                     color: white;
                     font-weight: 500;
                     font-size: 18px;
+                    transition: .3s opacity;
+
+                    &:hover {
+                        opacity: 70%;
+                    }
                 }
             }
 
@@ -182,23 +222,684 @@ main {
             }
         }
     }
-    .customer-absolute{
+
+    .customer-absolute {
         display: flex;
         justify-content: space-evenly;
+        align-items: center;
         background-color: rgb(244, 243, 246);
-        position: absolute;
-        z-index: 1;
+        position: relative;
         width: 65%;
+        height: auto;
         padding: 60px;
         border-radius: $border-radius-base*6;
+        left: 50%;
+        top: -60px;
+        transform: translate(-50%);
 
-        .seperator-vertical{
-            background-color: black;
-            width: 5px;
-            height: 60%;
-            transform: rotate(90deg);
+        @include breakPoint(880px) {
+            display: block;
+
+            .seperator-vertical {
+                display: none;
+            }
+
+        }
+
+        @include breakPoint(1115px) {
+            top: -20px;
+
+
         }
 
 
+        .customer-review {
+            display: flex;
+
+            img:last-child {
+                align-self: flex-end;
+            }
+
+            img:first-child {
+                align-self: flex-start;
+            }
+
+            p {
+                padding: 2px 20px;
+                color: $primary-color;
+                font-size: 18px;
+                line-height: 30px;
+            }
+
+        }
+
+        .seperator-vertical {
+            background-color: black;
+            width: 100px;
+            height: 2px;
+            transform: rotate(90deg);
+
+        }
+
+        .customer-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                height: 90px;
+                width: 90px;
+            }
+
+            div {
+
+                margin-left: 15px;
+
+                p {
+                    font-size: 18px;
+                    color: $primary-color;
+                    margin: 0;
+                    margin: 0;
+                }
+
+                h3 {
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: $primary-color;
+                    margin: 0;
+                }
+            }
+
+        }
+
+
+    }
+
+    .our-solution {
+        width: 100%;
+
+        .our-solution-main {
+            height: 1000px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+
+            @include breakPoint(1115px) {
+                flex-direction: column;
+                height: 110%;
+            }
+
+            .solution-desc {
+                line-height: 30px;
+
+                small {
+                    display: inline-block;
+                    color: $secondary-color;
+                    margin-bottom: 20px;
+                }
+
+                h2 {
+                    width: 80%;
+                    font-size: $heading-size;
+                    font-weight: $heading-weight;
+                    font-family: $special2-font-family;
+                    color: $primary-color;
+                }
+
+                p {
+                    width: 80%;
+                    font-size: 18px;
+                    font-weight: 400;
+                    color: $primary-color;
+                }
+            }
+
+            .solution-img {
+                margin: 50px;
+
+                img {
+                    height: 500px;
+
+                    @include breakPoint(650px) {
+                        height: 440px;
+
+                    }
+                }
+            }
+        }
+
+    }
+
+    .whypanther {
+        width: 100%;
+
+
+        .why-panther-main {
+            height: 1000px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include breakPoint(1115px) {
+                flex-direction: column;
+                height: 120%;
+            }
+
+            .whypanther-desc {
+                line-height: 30px;
+
+                small {
+                    display: inline-block;
+                    color: $secondary-color;
+                    margin-bottom: 20px;
+                }
+
+                h2 {
+                    width: 70%;
+                    font-size: $heading-size;
+                    font-weight: $heading-weight;
+                    font-family: $special2-font-family;
+                    color: $primary-color;
+                }
+
+                p {
+                    width: 80%;
+                    font-size: 18px;
+                    font-weight: 400;
+                    color: $primary-color;
+                }
+
+                a {
+                    font-weight: $font-weight;
+                    color: $secondary-color;
+                }
+            }
+
+            .whypanther {
+                width: 100%;
+                margin: 50px;
+
+                @include breakPoint(1115px) {
+                    display: none;
+                }
+
+                img {
+                    height: 500px;
+                }
+            }
+
+            .whypanther-reponsive {
+                width: 100%;
+
+                display: none;
+
+                @include breakPoint(1115px) {
+                    display: flex;
+                    justify-content: center;
+
+                }
+
+                img {
+                    height: 500px;
+
+                    @include breakPoint(650px) {
+                        height: 450px;
+
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    .lovepanther {
+        background-color: $grey-color;
+        height: 650px;
+        padding: 100px;
+
+        @include breakPoint(763px) {
+            height: 400px;
+
+        }
+
+        @include breakPoint(1344px) {
+            height: 700px;
+        }
+
+
+        .lovepanther-main {
+
+            display: flex;
+            font-family: $special2-font-family;
+            color: $primary-color;
+
+            @include breakPoint(1344px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            h2 {
+                font-size: 68px;
+                width: 80%;
+
+                @include breakPoint(1210px) {
+                    font-size: 54px;
+
+                }
+
+                @include breakPoint(992px) {
+                    font-size: 40px;
+                    width: 100%;
+                    padding: 0;
+
+                }
+
+
+            }
+
+            .lovepanther-review-pad {
+
+                width: 100%;
+
+                .review-up {
+                    display: flex;
+                    flex-direction: column;
+
+                    @include breakPoint(763px) {
+                        width: 100%;
+                        padding: 0;
+
+                    }
+
+
+                    .love-desc {
+                        width: 100%;
+
+                        p {
+                            font-size: 30px;
+                            font-style: italic;
+
+                            @include breakPoint(763px) {
+                                font-size: 20px;
+                                padding: 10px;
+
+                            }
+                        }
+
+                        display: flex;
+
+                        .left {
+                            align-self: flex-start;
+                            margin-right: 30px;
+                        }
+
+                        .right {
+                            align-self: flex-end;
+                        }
+
+
+                    }
+
+                    .love-user-info-active {
+                        margin-top: 40px;
+
+                        img {
+                            height: 70px;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    .trustedby {
+        display: flex;
+        height: 300px;
+        flex-direction: column;
+        padding: 100px 40px;
+        color: $primary-color;
+
+        h4 {
+            font-family: $special2-font-family;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+
+            li {
+                margin: 10px;
+                img{
+                    transition: .3s transform;
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+                }
+
+            }
+        }
+    }
+
+    .foundernote {
+        display: flex;
+        justify-content: center;
+        font-family: $special2-font-family;
+        color: $primary-color;
+
+        .note-card {
+            width: 870px;
+            position: relative;
+
+            @include breakPoint(920px) {
+                width: 100%;
+
+            }
+
+            display: flex;
+            justify-content: center;
+
+            .note {
+                padding: 10%;
+                display: flex;
+                flex-direction: column;
+
+                background-color: $article-background;
+                width: 100%;
+                height: 920px;
+
+                @include breakPoint(850px) {
+                    height: 950px;
+                }
+
+                @include breakPoint(730px) {
+                    height: 1020px;
+                }
+
+                @include breakPoint(631px) {
+
+                    height: 1040px;
+                }
+
+                @include breakPoint(626px) {
+
+                    height: 1080px;
+                }
+
+                @include breakPoint(609px) {
+
+                    height: 1350px;
+                }
+
+                h2 {
+                    font-size: $heading-size;
+                    margin-bottom: 20px;
+
+                }
+
+                article {
+                    font-size: 18px;
+                    color: $article-color;
+                    font-family: $secondary-font-family;
+                }
+
+                strong {
+                    font-family: $secondary-font-family;
+                    margin: 30px 0px;
+                }
+
+                img {
+                    position: absolute;
+                    top: -60px;
+                    right: -30px;
+                    padding: 0;
+
+                    @include breakPoint(925px) {
+                        transform: scale(0.7);
+
+                    }
+
+                }
+
+
+                a {
+                    width: 170px;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: $footer-back;
+    padding-top: 100px;
+    margin-top: 100px;
+
+    .foot-main {
+        display: flex;
+        padding-bottom: 100px;
+
+        @include breakPoint(1115px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+
+        .info-foot {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            img {
+                height: 30px;
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-size: 14px;
+
+            }
+
+            form {
+                label {
+                    font-size: 13px;
+
+                    span {
+                        color: red;
+                    }
+                }
+
+                input {
+                    height: 50px;
+                    width: 380px;
+                    border: 1px solid rgb(177, 177, 177);
+                    border-radius: 4px;
+                    transition: .3s background-color;
+                    padding: 0px 10px;
+
+                    &:focus{
+                        background-color: rgb(249, 253, 255);
+                        border: 1px solid $secondary-color;
+                        outline: none;
+                    }
+                    &:hover {
+                        background-color: rgb(231, 231, 231);
+                    }
+                }
+
+                button {
+                    height: 50px;
+                    width: 82px;
+                    background-color: white;
+                    border: 1px solid rgb(65, 65, 65);
+                    border-radius: 4px;
+                    transition: .3s background-color;
+
+                    &:hover {
+                        background-color: rgb(231, 231, 231);
+                    }
+
+                    @include breakPoint(1200px) {
+                        margin-top: 10px;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+
+        .foot-navs {
+            display: flex;
+
+            @include breakPoint(1115px) {
+                padding-top: 100px;
+            }
+
+            @include breakPoint(762px) {
+                padding: 0;
+                flex-wrap: nowrap;
+            }
+
+            ul {
+                list-style: none;
+                color: $primary-color;
+                line-height: 27px;
+                width: 250px;
+
+                @include breakPoint(762px) {
+                    flex-wrap: wrap;
+                    padding: 0;
+                    padding-top: 20px;
+                    width: 200px;
+                }
+
+                h5 {
+                    font-size: 26px;
+                    font-family: $special2-font-family;
+                }
+
+
+                li {
+
+                    a {
+                        font-size: 14px;
+
+                        color: $primary-color;
+                        transition: .3s color;
+
+                        &:hover {
+    
+                            color: $secondary-color;
+        
+        
+                        }
+                    }
+
+                }
+            }
+
+        }
+
+    }
+
+    .foot-copyrights {
+        display: flex;
+
+        justify-content: space-between;
+
+        @include breakPoint(1115px) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .copyright {
+            @include breakPoint(1115px) {
+                width: 60%;
+                justify-content: space-around;
+                flex-wrap: wrap;
+
+            }
+
+            display: inherit;
+
+            justify-content: space-between;
+            width: 30%;
+
+            .socials {
+                display: flex;
+                width: 50px;
+                justify-content: space-evenly;
+
+                img {
+                    height: 20px;
+                    width: 20px;
+                    margin: 0px 5px;
+
+
+                }
+            }
+
+            span {
+                font-size: 14px;
+                color: $primary-color;
+                text-align: center;
+            }
+        }
+
+        ul {
+            width: 40%;
+            display: inherit;
+            justify-content: space-evenly;
+            list-style: none;
+            flex-wrap: nowrap;
+            align-items: center;
+
+            @include breakPoint(1115px) {
+                width: 100%;
+                justify-content: space-between;
+
+            }
+
+            @include breakPoint(762px) {
+                flex-wrap: wrap;
+                justify-content: center;
+
+            }
+
+
+            li {
+                flex-shrink: 0;
+                margin: 0px 5px;
+
+
+
+                a {
+                    width: 20%;
+                    width: 100%;
+                    color: $primary-color;
+                    font-size: 14px;
+                    transition: .3s color;
+
+                    &:hover {
+
+                        color: $secondary-color;
+    
+    
+                    }
+                }
+            }
+        }
     }
 }

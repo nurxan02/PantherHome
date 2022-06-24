@@ -10,23 +10,30 @@
     transition: .3s;
 }
 
+.button-3{
+    @extend %button-properties-3;
+    color: $primary-color;
+    transition: .3s;
+}
+
 %button-properties {
     padding: 16px 24px;
     font-size: 17px; 
     border-radius: $border-radius-base;
-    @include breakPoint(1280px){
+    @include breakPoint(1509px){
         padding: 14px 20px;
         font-size: 16px; 
     };
-    @include breakPoint(1169px){
+    @include breakPoint(1398px){
         padding: 12px 18px;
         font-size: 15px; 
     };
-    @include breakPoint(1145px){
+    @include breakPoint(1374px){
         padding: 10px 16px;
         font-size: 14px; 
+        
     };
-    @include breakPoint(1120px){
+    @include breakPoint(1349px){
         padding: 8px 13px;
         font-size: 13px; 
     };
@@ -47,6 +54,11 @@
     };
 
 
+}
+%button-properties-3{
+    padding: 16px 24px;
+    font-size: 17px; 
+    border-radius: $border-radius-base;
 }
 
 .button-bold{
